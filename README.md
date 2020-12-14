@@ -24,6 +24,7 @@ Go-Micro.v2 2.9.1
 
 controllers与services之间通过Go-Micro微服务框架进行服务的调用。
 services中实现服务的业务逻辑，配置及建立使用etcd的微服务rpc服务器，将服务注册到注册中心。Go-Micro服务之间使用Protobuf进行RPC通信。
+models中使用了beego自带的orm进行数据库连接及设置连接池等。
 
 ### 后续思路
 当前初步搭建了使用Beego的MVC及Go-Micro的微服务的应用框架，功能上只实现了从数据库中读取所有图书信息，后续开发思路有：
@@ -52,4 +53,4 @@ services中实现服务的业务逻辑，配置及建立使用etcd的微服务rp
             └─ main.go     // rpc服务器入口（启动rpc服务器）
     ```
 - 其他：
-    - 加入入口反向代理、log、test等
+    - 加入入口反向代理、缓存(Redis)、log、test等
