@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package book;
+
+option go_package = "library_manager/protos";
+
+message Empty {}
+
+message Book {
+    int64 id = 1;
+    string name = 2;
+    string author = 3;
+}
+
+message BookList {
+    repeated Book book = 1;
+}
+
+// 服务接口
+service BookService {
+    rpc ListAll(Empty) returns (BookList) {}
+}
